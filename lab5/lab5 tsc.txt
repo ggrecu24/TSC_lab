@@ -1,0 +1,61 @@
+definim class Transaction
+	op_a
+	op_b
+	opcode
+	write_pointer
+	
+	functii:
+		randomize(copy-paste) pentru op_a ETC	
+		printTransaction (copy-paste)
+	
+endclass	
+
+definim class Driver
+	Transaction tr;
+	virtual tb_ifc vio; 
+	
+	constructorul new (tb_ifc new_io)
+		vio <= new_io;
+	endfunction
+	
+	generate transaction
+		repeat(3) begin
+			@(io.cb) tr.randomize;
+			cb.op_a <= tr.op_a
+			cb.op_b <= tr.op_b
+			cb.opcode <= tr.opcode
+			@(io.cb) tr.printTransaction
+			
+	endfunction
+endclass
+
+
+class test(io)
+	initial
+	driver dr;
+	dr = new(io);
+	
+endclass
+
+
+
+class DriveTransaction
+	function 
+		io.cb.write_pointer <= 5'h00;      // initialize write pointer
+		io.cb.read_pointer  <= 5'h1F;      // initialize read pointer
+		io.cb.load_en       <= 1'b0;       // initialize load control line
+		io.cb.reset_n       <= 1'b0;       // assert reset_n (active low)
+		repeat (2) @(posedge io.cb) ;  // hold in reset for 2 clock cycles
+		io.cb.reset_n       <= 1'b1;       // assert reset_n (active low)
+	endfunction
+endclass
+	
+	
+	
+	
+class Monitor	
+	read_pointer
+	
+	function read_results
+		for(i=0, i<=2 , i++)
+			
