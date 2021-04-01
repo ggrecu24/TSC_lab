@@ -15,7 +15,11 @@
 # do run.do
 # 1
 # Model Technology ModelSim SE-64 vlog 10.6d Compiler 2018.02 Feb 24 2018
+<<<<<<< HEAD
 # Start time: 17:45:02 on Apr 01,2021
+=======
+# Start time: 16:45:13 on Mar 25,2021
+>>>>>>> 33005299b3cea51a2743b6e94bade82afb5ca03c
 # vlog -reportprogress 300 -sv -timescale 1ps/1ps -work work -f sources.txt 
 # -- Compiling package instr_register_pkg
 # -- Compiling module instr_register
@@ -26,18 +30,28 @@
 # 
 # Top level modules:
 # 	top
+<<<<<<< HEAD
 # End time: 17:45:02 on Apr 01,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -novopt -quiet -nocoverage "+notimingchecks" "+nowarnTSCALE" -sva top 
 # Start time: 17:45:02 on Apr 01,2021
+=======
+# End time: 16:45:13 on Mar 25,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -quiet -nocoverage "+notimingchecks" "+nowarnTSCALE" -sva top 
+# Start time: 16:45:13 on Mar 25,2021
+>>>>>>> 33005299b3cea51a2743b6e94bade82afb5ca03c
 # ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # Refreshing C:/Users/Grecu/Desktop/TSC_lab/lab5/sim/work.top
 # Refreshing C:/Users/Grecu/Desktop/TSC_lab/lab5/sim/work.instr_register_pkg
 # Refreshing C:/Users/Grecu/Desktop/TSC_lab/lab5/sim/work.tb_ifc
 # Refreshing C:/Users/Grecu/Desktop/TSC_lab/lab5/sim/work.instr_register_test
 # Refreshing C:/Users/Grecu/Desktop/TSC_lab/lab5/sim/work.instr_register
+<<<<<<< HEAD
 # ** Error: (vish-4014) No objects found matching '/top/test_clk'.
 # Executing ONERROR command at macro ./wave.do line 4
+=======
+>>>>>>> 33005299b3cea51a2743b6e94bade82afb5ca03c
 # 
 # 
 # ***********************************************************
@@ -81,6 +95,7 @@
 #   operand_a = -15
 #   operand_b = 8
 # 
+<<<<<<< HEAD
 # Read from register location 31: 
 #   opcode = 7 (MOD)
 #   operand_a = -15
@@ -96,3 +111,39 @@
 # Load canceled
 # End time: 17:52:56 on Apr 01,2021, Elapsed time: 0:07:54
 # Errors: 4, Warnings: 1
+=======
+# 
+# ***********************************************************
+# *  THIS IS NOT A SELF-CHECKING TESTBENCH (YET).  YOU  *
+# *  NEED TO VISUALLY VERIFY THAT THE OUTPUT VALUES     *
+# *  MATCH THE INPUT VALUES FOR EACH REGISTER LOCATION  *
+# ***********************************************************
+# 
+# ** Note: $finish    : ../lab02_clocking_blocks/instr_register_test.sv(61)
+#    Time: 84 ns  Iteration: 2  Instance: /top/test
+# 1
+# Break in Module instr_register_test at ../lab02_clocking_blocks/instr_register_test.sv line 61
+# Simulation Breakpoint: 1
+# Break in Module instr_register_test at ../lab02_clocking_blocks/instr_register_test.sv line 61
+# MACRO ./run.do PAUSED at line 45
+add wave -position insertpoint  \
+sim:/top/io/clk \
+sim:/top/io/load_en \
+sim:/top/io/reset_n \
+sim:/top/io/opcode \
+sim:/top/io/operand_a \
+sim:/top/io/operand_b \
+sim:/top/io/write_pointer \
+sim:/top/io/read_pointer \
+sim:/top/io/instruction_word
+add wave -position insertpoint  \
+sim:/top/io/clk \
+sim:/top/io/load_en \
+sim:/top/io/reset_n \
+sim:/top/io/opcode \
+sim:/top/io/operand_a \
+sim:/top/io/operand_b \
+sim:/top/io/write_pointer \
+sim:/top/io/read_pointer \
+sim:/top/io/instruction_word
+>>>>>>> 33005299b3cea51a2743b6e94bade82afb5ca03c
