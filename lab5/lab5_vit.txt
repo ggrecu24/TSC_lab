@@ -1,0 +1,68 @@
+Ce trb sa facem ?? 
+
+1. clasa Transaction (copy paste)
+Class Transaction 
+
+op a
+op b
+write_p
+
+randomizeTranzaction -- functie
+
+print tranzaction -- functie
+
+endclass
+
+2.class Driver
+
+tranzaction tr;
+virtual tb_ifc vio;
+new (tbc_ifc) new_io;
+vio <= new_io;
+
+functie -- generate_tranzaction 
+	repeat(3)...begin
+	@(io.cb) tr.randomize_tranzaction;
+	io.cb.opA <= tr.opa
+	io.cb.opB <= tr.opb
+	io,cb.opcode <= tr.opt
+
+	....tr.print_tranzaction
+end 
+endfunction
+
+drive_tranzaction 
+    $display("\nReseting the instruction register...");
+    io.write_pointer = 5'h00;      // initialize write pointer
+    io.read_pointer  = 5'h1F;      // initialize read pointer
+    io.load_en       = 1'b0;       // initialize load control line
+    io.reset_n       = 1'b0;       // assert reset_n (active low)
+    repeat (2) @(posedge io.cb) ;  // hold in reset for 2 clock cycles
+    io.reset_n       = 1'b1;       // assert reset_n (active low)
+
+	@(posedge io.cb) io.load_en <= 1'b1;  // enable writing to register
+	generate_tranzaction;
+	@(posedge io.cb) io.load_en <= 1'b0;  // turn-off writing to register
+endfunction
+endclass
+
+class Monitor
+interfata ca la driver
+
+read_results  
+ for...
+	io.cb <= i
+	print_results;
+endfunctin
+		
+
+endclass
+
+
+test :
+ initial 
+driver drv;
+drv = new(io)
+drv.generate_tranzaction;
+monitor mnt;
+mnt = new(io);

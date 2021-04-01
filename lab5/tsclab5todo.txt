@@ -1,0 +1,53 @@
+-definesc clasa cu numele transaction
+	class Transcaction
+		op_a
+		op_b
+		opcode
+		writepointer
+		randomize transaction(); //le luam cu copy paste
+		print_transaction(); //le luam cu copy paste
+	end class
+
+-clasa driver
+	class Driver
+		Trasnaction tr;
+		virtual itr_ifc vio;
+		new (tbc_ifc, new_io);
+		vio <= new_io;
+		endfunction? 
+		function void? generate_transaction;
+			repeat(3)...begin
+			@(io.cb) tr.randomise_transaction;
+			@(io.cb) tr.print_transaction;
+			io.cb.op_a <=tr.op_a
+			io.cb.op_b <=tr.op_b
+			io.cb.opcode <=tr.opcode
+		endfunction
+		function void? drive_transaction;
+			//facem reset la semnale
+			io.write_pointer = 5'h00;      // initialize write pointer
+    			io.read_pointer  = 5'h1F;      // initialize read pointer
+    			io.load_en       = 1'b0;       // initialize load control line
+   			io.reset_n       = 1'b0;       // assert reset_n (active low)
+    			repeat (2) @(posedge io.cb) ;  // hold in reset for 2 clock cycles
+    			io.reset_n       = 1'b1;       // assert reset_n (active low)
+			 @(posedge io.cb) io.load_en <= 1'b1;  // enable writing to register
+			generate_transaction
+			load.cb.io <= 0;
+	endclass
+
+
+-test
+initial
+Driver dr;
+drv = new(io);
+drv.generate_transaction
+
+-clasa monitor
+	class monitor
+		read_pointer
+		function void read_results
+			for (i=0;i<=2;i++)
+				@(posedge io.cb) print_results;
+		endfunction
+	endclass
