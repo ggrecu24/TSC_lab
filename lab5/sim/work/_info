@@ -26,11 +26,7 @@ Z4 w1614867531
 F../../lab2/lab_dut/instr_register.sv
 L0 9
 Z5 OL;L;10.6d;65
-<<<<<<< HEAD
-Z6 !s108 1617288302.000000
-=======
-Z6 !s108 1616683513.000000
->>>>>>> 33005299b3cea51a2743b6e94bade82afb5ca03c
+Z6 !s108 1617892689.000000
 Z7 !s107 ../lab02_clocking_blocks/top.sv|../lab02_clocking_blocks/tb_ifc.sv|../lab02_clocking_blocks/instr_register_test.sv|../../lab2/lab_dut/instr_register.sv|../../lab2/lab_dut/instr_register_pkg.sv|
 Z8 !s90 -reportprogress|300|-sv|-timescale|1ps/1ps|-work|work|-f|sources.txt|
 !i113 0
@@ -68,21 +64,12 @@ r1
 !s85 0
 31
 !i10b 1
-<<<<<<< HEAD
-!s100 ZR`A<YJY>MPYZINIS4bNb1
-I^hJM;UIo?COcPlZ80Gl^Z2
+!s100 oA5gY6dS2<2]Wc5WP56Jk0
+I`DKB<;=lW70KnVOSYe>Hg0
 !s105 instr_register_test_sv_unit
 S1
 R0
-w1617288123
-=======
-!s100 c_;[_a=Z9F0SPB9oNhcd90
-I6`?;[]I8hg7i;ZDD;mkHT0
-!s105 instr_register_test_sv_unit
-S1
-R0
-w1615479028
->>>>>>> 33005299b3cea51a2743b6e94bade82afb5ca03c
+w1617892672
 8../lab02_clocking_blocks/instr_register_test.sv
 F../lab02_clocking_blocks/instr_register_test.sv
 L0 13
@@ -102,24 +89,15 @@ r1
 !s85 0
 31
 !i10b 1
-<<<<<<< HEAD
-!s100 d6UV[RkV@I;bK?=@feBT[3
-I98z=dmIz:Ho9Pl=La>W910
+!s100 Pc<mSo]gn_<K>QEbAA>hL3
+I278UXTOn0LGAUbbJ3eeWV0
 !s105 tb_ifc_sv_unit
 S1
 R0
-w1617287562
-=======
-!s100 8nR]?kjUO5E0M>TXlglNC2
-IjCE2SaW8n:[jEkPXFheWb0
-!s105 tb_ifc_sv_unit
-S1
-R0
-w1615478662
->>>>>>> 33005299b3cea51a2743b6e94bade82afb5ca03c
+Z12 w1617889063
 8../lab02_clocking_blocks/tb_ifc.sv
 F../lab02_clocking_blocks/tb_ifc.sv
-Z12 L0 10
+Z13 L0 10
 R5
 R6
 R7
@@ -136,24 +114,15 @@ r1
 !s85 0
 31
 !i10b 1
-<<<<<<< HEAD
-!s100 VKh39`[Gbi[;ijXMKkg1L0
-I:7XlT7V602VXUEg?KQ_Fa2
+!s100 hj1i=?RafgdIE5[ShBMXP1
+I>GI5F@_5Q:cEdzLY:ZI5E1
 !s105 top_sv_unit
 S1
 R0
-w1617287098
-=======
-!s100 A8GaLRn63a<8kK]6[T5F62
-Ifgm;E^RNYfW;1K0zOnk8_0
-!s105 top_sv_unit
-S1
-R0
-w1615457226
->>>>>>> 33005299b3cea51a2743b6e94bade82afb5ca03c
+R12
 8../lab02_clocking_blocks/top.sv
 F../lab02_clocking_blocks/top.sv
-R12
+R13
 R5
 R6
 R7
